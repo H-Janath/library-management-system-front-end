@@ -18,10 +18,30 @@
         <td>{{ book.author }}</td>
         <td>{{ book.category }}</td>
         <td>{{ book.qty }}</td>
-        <td><button class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
+        <td><button (click)="setSelectedBook(book)"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
         <td><button class="btn btn-primary "><i class="bi bi-pencil-square"></i></button></td>
         
       </tr>
     </tbody>
   </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Books</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If You want to delete thi book
+      </div>
+      <div class="modal-footer">
+        <button  (click)="deleteBook()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
 </div>
