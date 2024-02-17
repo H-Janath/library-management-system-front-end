@@ -2,6 +2,7 @@ import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-all-book',
@@ -35,6 +36,11 @@ export class ViewAllBookComponent implements OnInit{
     this.http.delete(api,{responseType:'text'}).subscribe((response:String)=>{
       this.LoadBook();
       this.selectedBook=null;
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
     });
     this.LoadBook();
   }  
