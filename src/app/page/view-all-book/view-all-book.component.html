@@ -27,7 +27,7 @@
 </div>
 
 
-<!-- Modal -->
+<!--Delete Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -39,7 +39,7 @@
         If You want to delete thi book
       </div>
       <div class="modal-footer">
-        <button  (click)="deleteBook()" type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+        <button  (click)="deleteBook()" type="button"  class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
         <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -59,11 +59,11 @@
         <form>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">ID:</label>
-            <input type="text" value={{selectedBook?.id}} class="form-control" id="recipient-name">
+            <input type="text" disabled value={{selectedBook?.id}} class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">ISBN:</label>
-            <input type="text" value={{selectedBook?.isbn}}  class="form-control" id="recipient-name">
+            <input type="text" disabled value={{selectedBook?.isbn}}  class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Title:</label>
@@ -86,7 +86,31 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdateeModal">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Update confirmation Modal -->
+<div class="modal fade" id="UpdateeModal" tabindex="-1" #UpdateeModal aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If you want to update "{{this.selectedBook?.title}}" this book
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveBook()">Save changes</button>
       </div>
     </div>
   </div>
