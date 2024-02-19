@@ -3,7 +3,7 @@ import { OnInit } from '@angular/core';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit{
 
   private http;
   public countryList:any;
+  public selectedCountry :any;
   constructor(private httpClient:HttpClient){
       this.http = httpClient;
   }
@@ -30,8 +31,8 @@ export class RegisterComponent implements OnInit{
         this.countryList = res;
       })
   }
-
-  
-
+  setSelectedCode(country :any){
+    this.selectedCountry = country;
+  }
 
 }
