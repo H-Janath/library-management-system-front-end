@@ -18,8 +18,8 @@
         <td>{{ book.author }}</td>
         <td>{{ book.category }}</td>
         <td>{{ book.qty }}</td>
-        <td><button (click)="setSelectedBook(book)"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
-        <td><button (click)="setSelectedBook(book)" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel" ><i class="bi bi-pencil-square"></i></button></td>
+        <td><button (click)="setSelectedBook(book)"  data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
+        <td><button (click)="setSelectedBook(book)" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel1" ><i class="bi bi-pencil-square"></i></button></td>
         
       </tr>
     </tbody>
@@ -28,7 +28,7 @@
 
 
 <!--Delete Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -48,7 +48,7 @@
 
 
 
-<div class="modal fade" id="updatemodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updatemodel1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

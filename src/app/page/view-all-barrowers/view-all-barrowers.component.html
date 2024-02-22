@@ -16,10 +16,97 @@
           <td>{{barrowers.contact_no}}</td>
           <td>{{barrowers.address}}</td>
           <td>{{barrowers.nic}}</td>
-          <td><button  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
-          <td><button  class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel" ><i class="bi bi-pencil-square"></i></button></td>
+          <td><button (click)="selectBarrower(barrowers)"  data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
+          <td><button (click)="selectBarrower(barrowers)" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel2" ><i class="bi bi-pencil-square"></i></button></td>
           
         </tr>
       </tbody>
     </table>
   </div>
+
+  
+<!--Delete Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Books</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If You want to delete thi book
+      </div>
+      <div class="modal-footer">
+        <button  (click)="deleteBarrower()" type="button"  class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="updatemodel2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">BIS:</label>
+            <input type="text" disabled value={{selectedBarrowe?.bid}} class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Barrower name:</label>
+            <input type="text" disabled value={{selectedBarrowe?.barrower_name}}  class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Contact_no:</label>
+            <!-- Corrected and rewritten input field -->
+            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.contact_no" [ngModelOptions]="{standalone:true}" class="form-control" id="recipient-name">
+        </div>
+        
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Address:</label>
+            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.address" [ngModelOptions]="{standalone:true}"   class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">NIC:</label>
+            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.nic" [ngModelOptions]="{standalone:true}"    class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdateeModal">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Update confirmation Modal -->
+<div class="modal fade" id="UpdateeModal" tabindex="-1" #UpdateeModal aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If you want to update "{{this.selectedBarrowe?.barrower_name}}" this barrower
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="saveBarrower()">Update confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
