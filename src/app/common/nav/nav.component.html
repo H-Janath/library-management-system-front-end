@@ -10,7 +10,7 @@
         <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="#" class="nav-link px-2">Features</a></li>
         <li><a href="#" class="nav-link px-2" [routerLink]="['/view-books']">View all books</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2" [routerLink]="['/view-barrowers']">Barrowers</a></li>
         <li><a href="#" class="nav-link px-2">About</a></li>
       </ul>
 
@@ -20,3 +20,94 @@
       </div>
     </header>
   </div>
+
+  <!--Delete Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Books</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If You want to delete thi book
+      </div>
+      <div class="modal-footer">
+        <button  type="button"  class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="updatemodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">ID:</label>
+            <input type="text" disabled  class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">ISBN:</label>
+            <input type="text" disabled   class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Title:</label>
+            <!-- Corrected and rewritten input field -->
+            <input type="text" class="form-control" id="recipient-name">
+        </div>
+        
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Author:</label>
+            <input type="text"class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Category:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Quantity:</label>
+            <input type="text"    class="form-control" id="recipient-name">
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#UpdateeModal">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Update confirmation Modal -->
+<div class="modal fade" id="UpdateeModal" tabindex="-1" #UpdateeModal aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If you want to update  this book
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Update confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

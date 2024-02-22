@@ -10,12 +10,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let barrowers of barrowersList">
+          <td >{{barrowers.bid}}</td>
+          <td>{{barrowers.barrower_name}}</td>
+          <td>{{barrowers.contact_no}}</td>
+          <td>{{barrowers.address}}</td>
+          <td>{{barrowers.nic}}</td>
           <td><button  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
           <td><button  class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel" ><i class="bi bi-pencil-square"></i></button></td>
           
