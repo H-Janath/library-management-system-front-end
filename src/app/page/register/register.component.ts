@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit{
 
 
   public addborrower(){
-    let api = "http://localhost:8081/barrowers/add";
+    let api = "http://localhost:8081/borrowers/add";
     this.http.post(api,this.Borrower).subscribe(res=>{
       this.respond = res;
       console.log(this.respond);
