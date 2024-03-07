@@ -17,10 +17,12 @@ export class RegisterComponent implements OnInit{
   public countryList:any;
   public selectedCountry :any;
   public respond : any;
+  public borrowerId :any;
   constructor(private httpClient:HttpClient){
       this.http = httpClient;
   }
   public Borrower={
+    borrowerId: null,
     firstname: null,
     lastname: null,
     username : null,
@@ -30,7 +32,10 @@ export class RegisterComponent implements OnInit{
     country : null,
     phone_no: null
   }
-
+  ngOnInit(): void {
+    this.loadCountry();
+    this.addborrowerID();
+  }
 
 
   public addborrower(){
@@ -41,15 +46,19 @@ export class RegisterComponent implements OnInit{
     })
   }
 
-  ngOnInit(): void {
-    this.loadCountry();
+
+  addborrowerID() {
+    let api = "http://localhost:8081/borrowers/id";
+    this.http.get(api).subscribe(res=>{
+        this.borrowerId = res;
+        console.log(this.borrowerId.userId);
+    })
   }
 
   loadCountry(){
       let api = "https://restcountries.com/v3.1/all";
       this.http.get(api).subscribe(res=>{
         this.countryList = res;
-       
       })
   }
   setSelectedCode(country :any){
