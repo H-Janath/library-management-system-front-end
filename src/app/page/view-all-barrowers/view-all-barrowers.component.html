@@ -7,15 +7,17 @@
           <th scope="col">Contact No</th>
           <th scope="col">Address</th>
           <th scope="col">NIC</th>
+          <th scope="col">Email</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let barrowers of barrowersList">
-          <td >{{barrowers.bid}}</td>
-          <td>{{barrowers.barrower_name}}</td>
-          <td>{{barrowers.contact_no}}</td>
-          <td>{{barrowers.address}}</td>
+          <td >{{barrowers.borrowerId}}</td>
+          <td>{{barrowers.firstname}}</td>
+          <td>{{barrowers.phone_no}}</td>
+          <td>{{barrowers.address1}}</td>
           <td>{{barrowers.nic}}</td>
+          <td>{{barrowers.email}}</td>
           <td><button (click)="selectBarrower(barrowers)"  data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-danger"><i class="bi bi-archive"></i></button></td>
           <td><button (click)="selectBarrower(barrowers)" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#updatemodel2" ><i class="bi bi-pencil-square"></i></button></td>
           
@@ -57,25 +59,25 @@
         <form>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">BIS:</label>
-            <input type="text" disabled value={{selectedBarrowe?.bid}} class="form-control" id="recipient-name">
+            <input type="text" disabled value={{selectedBarrower?.borrowerId}} class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Barrower name:</label>
-            <input type="text" disabled value={{selectedBarrowe?.barrower_name}}  class="form-control" id="recipient-name">
+            <input type="text" disabled value={{selectedBarrower?.firstname}}  class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Contact_no:</label>
             <!-- Corrected and rewritten input field -->
-            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.contact_no" [ngModelOptions]="{standalone:true}" class="form-control" id="recipient-name">
+            <input type="text" [(ngModel)]="selectedBarrower && this.selectedBarrower.phone_no" [ngModelOptions]="{standalone:true}" class="form-control" id="recipient-name">
         </div>
         
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Address:</label>
-            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.address" [ngModelOptions]="{standalone:true}"   class="form-control" id="recipient-name">
+            <input type="text" [(ngModel)]="selectedBarrower && this.selectedBarrower.address1" [ngModelOptions]="{standalone:true}"   class="form-control" id="recipient-name">
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">NIC:</label>
-            <input type="text" [(ngModel)]="selectedBarrowe && this.selectedBarrowe.nic" [ngModelOptions]="{standalone:true}"    class="form-control" id="recipient-name">
+            <input type="text" [(ngModel)]="selectedBarrower && this.selectedBarrower.nic" [ngModelOptions]="{standalone:true}"    class="form-control" id="recipient-name">
           </div>
         </form>
       </div>
@@ -101,7 +103,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        If you want to update "{{this.selectedBarrowe?.barrower_name}}" this barrower
+        If you want to update "{{this.selectedBarrower?.barrower_name}}" this barrower
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

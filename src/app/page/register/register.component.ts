@@ -28,9 +28,13 @@ export class RegisterComponent implements OnInit{
     username : null,
     email : null,
     address1 : null,
-    address2 : null,
+    nic : null,
     country : null,
     phone_no: null
+  }
+  public User = {
+    username : null,
+    password : null
   }
   ngOnInit(): void {
     this.loadCountry();
@@ -40,9 +44,13 @@ export class RegisterComponent implements OnInit{
 
   public addborrower(){
     let api = "http://localhost:8081/borrowers/add";
+    let signUpapi = "http://localhost:8081/auth/register";
     this.http.post(api,this.Borrower).subscribe(res=>{
       this.respond = res;
-      console.log(this.respond);
+      this.http.post(signUpapi,this.User).subscribe(res=>{
+        this.respond = res;
+        console.log(this.respond);
+      })
     })
   }
 
@@ -51,7 +59,6 @@ export class RegisterComponent implements OnInit{
     let api = "http://localhost:8081/borrowers/id";
     this.http.get(api).subscribe(res=>{
         this.borrowerId = res;
-        console.log(this.borrowerId.userId);
     })
   }
 

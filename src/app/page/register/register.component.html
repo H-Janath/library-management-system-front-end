@@ -1,22 +1,26 @@
 <div class="container w-50">
-<main>
+  <main>
     <div class="py-5 text-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
-        <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-box-arrow-in-left"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z" />
+        <path fill-rule="evenodd"
+          d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
       </svg>
       <h2>Sign up</h2>
     </div>
 
     <div class="row g-5">
       <div class="col-md-12 col-lg-12">
-        <h4 class="mb-3">Billing address</h4>
-        <h4 class="mb-3">Borrower ID : {{borrowerId.userId}}</h4>
+        <h4 class="mb-3">User Registration Form</h4>
+        <h4 class="mb-3">Borrower ID : {{borrowerId?.userId}}</h4>
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" [(ngModel)]="Borrower.firstname" [ngModelOptions]="{standalone:true}"  id="firstName" placeholder="" value="" required>
+              <input type="text" class="form-control" [(ngModel)]="Borrower.firstname"
+                [ngModelOptions]="{standalone:true}" id="firstName" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -24,7 +28,8 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control"[(ngModel)]="Borrower.lastname" [ngModelOptions]="{standalone:true}" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" [(ngModel)]="Borrower.lastname"
+                [ngModelOptions]="{standalone:true}" id="lastName" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -34,8 +39,9 @@
               <label for="username" class="form-label">Username</label>
               <div class="input-group has-validation">
                 <span class="input-group-text"></span>
-                <input type="text" class="form-control" id="username"[(ngModel)]="Borrower.username" [ngModelOptions]="{standalone:true}" placeholder="Username" required>
-              <div class="invalid-feedback">
+                <input type="text" class="form-control" id="username"  [(ngModel)]="User.username"
+                  [ngModelOptions]="{standalone:true}" placeholder="Username" required>
+                <div class="invalid-feedback">
                   Your username is required.
                 </div>
               </div>
@@ -43,7 +49,8 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" [(ngModel)]="Borrower.email" [ngModelOptions]="{standalone:true}" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" [(ngModel)]="Borrower.email"
+                [ngModelOptions]="{standalone:true}" placeholder="you@example.com">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -51,38 +58,55 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" [(ngModel)]="Borrower.address1" [ngModelOptions]="{standalone:true}" placeholder="1234 Main St" required>
+              <input type="text" class="form-control" id="address" [(ngModel)]="Borrower.address1"
+                [ngModelOptions]="{standalone:true}" placeholder="1234 Main St" required>
               <div class="invalid-feedback">
-                Please enter your shipping address.
+
               </div>
             </div>
 
             <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" [(ngModel)]="Borrower.address2" [ngModelOptions]="{standalone:true}" placeholder="Apartment or suite">
+              <label for="address2" class="form-label">NIC No<span class="text-body-secondary"></span></label>
+              <input type="text" class="form-control" id="address2" [(ngModel)]="Borrower.nic"
+                [ngModelOptions]="{standalone:true}">
             </div>
 
             <div class="col-md-5">
               <label for="country" class="form-label">Country</label>
               <select class="form-select" id="country" required>
                 <option value="">Choose...</option>
-                <option *ngFor="let country of countryList"    (click)="setSelectedCode(country)">{{country.flag}}&nbsp;{{country.name.common}}</option>
+                <option *ngFor="let country of countryList" (click)="setSelectedCode(country)">
+                  {{country.flag}}&nbsp;{{country.name.common}}</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid country.
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 col-lg-7">
               <label for="zip" class="form-label">Phone number</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required [(ngModel)]="selectedCountry?.idd.root" [(ngModel)]="Borrower.phone_no" [ngModelOptions]="{standalone:true}" >
+              <input type="text" class="form-control" id="zip" placeholder="" required
+                [(ngModel)]="selectedCountry?.idd.root" [(ngModel)]="Borrower.phone_no"
+                [ngModelOptions]="{standalone:true}">
               <div class="invalid-feedback">
                 Zip code required.
               </div>
             </div>
+            <div class="col-md-6">
+              <label for="country" class="form-label">Password</label>
+              <input type="text" class="form-control" id="zip" placeholder="">
+
+            </div>
+
+            <div class="col-lg-6">
+              <label for="zip" class="form-label">Confirm password</label>
+              <input type="text" class="form-control" id="zip" [(ngModel)]="User.password"
+              [ngModelOptions]="{standalone:true}" >
+
+            </div>
           </div>
           <hr class="my-4">
-          <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="addborrower()">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="addborrower()">Submit</button>
         </form>
       </div>
     </div>

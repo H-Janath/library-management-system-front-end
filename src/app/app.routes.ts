@@ -3,6 +3,7 @@ import { LoginComponent } from './page/login/login.component';
 import { ViewAllBookComponent } from './page/view-all-book/view-all-book.component';
 import { RegisterComponent } from './page/register/register.component';
 import { ViewAllBarrowersComponent } from './page/view-all-barrowers/view-all-barrowers.component';
+import { BookRegisterComponent } from './page/book-register/book-register.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,8 @@ export const routes: Routes = [
     {
         path:"view-barrowers",
         component:ViewAllBarrowersComponent
+    },{
+        path:"add-books",
+        component:BookRegisterComponent
     }
 ];
