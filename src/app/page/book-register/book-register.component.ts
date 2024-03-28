@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class BookRegisterComponent{
   private http;
+  public response : any;
   constructor(private httpClient: HttpClient){
     this.http=httpClient;
   }
@@ -27,12 +28,9 @@ export class BookRegisterComponent{
   addBookId() {
     let api = "http://localhost:8080/api/v1/books"
     this.http.post(api,this.Book).subscribe(res=>{
-        
+        this.response = res;
+        console.log(this.response);
     })
   }
-  public Books={
-
-  }
-  
 
 }
