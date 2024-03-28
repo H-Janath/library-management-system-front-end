@@ -15,6 +15,21 @@ export class BookRegisterComponent{
   constructor(private httpClient: HttpClient){
     this.http=httpClient;
   }
+  public Book={
+    title : null,
+    bookId: null,
+    author: null,
+    category: null,
+    isbn : null,
+    quantity : null
+  }
+
+  addBookId() {
+    let api = "http://localhost:8080/api/v1/books"
+    this.http.post(api,this.Book).subscribe(res=>{
+        
+    })
+  }
   public Books={
 
   }

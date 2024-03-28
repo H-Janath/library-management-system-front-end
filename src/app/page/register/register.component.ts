@@ -40,8 +40,6 @@ export class RegisterComponent implements OnInit{
     this.loadCountry();
     this.addborrowerID();
   }
-
-
   public addborrower(){
     let api = "http://localhost:8081/borrowers/add";
     let signUpapi = "http://localhost:8081/auth/register";

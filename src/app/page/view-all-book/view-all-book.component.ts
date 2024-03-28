@@ -25,14 +25,14 @@ export class ViewAllBookComponent implements OnInit{
   }
 
   private LoadBook(){
-    this.http.get('http://localhost:8080/book/get').subscribe((data)=>{
+    this.http.get('http://localhost:8080/api/v1/books').subscribe((data)=>{
       this.bookList=data;
     })
   }
 
 
   deleteBook(){
-    let api = "http://localhost:8080/book/"+this.selectedBook.id;
+    let api = "http://localhost:8080/api/v1/books"+this.selectedBook.id;
     this.http.delete(api,{responseType:'text'}).subscribe((response:String)=>{
       this.LoadBook();
       this.selectedBook=null;
@@ -50,7 +50,7 @@ export class ViewAllBookComponent implements OnInit{
   }
 
   saveBook(){
-    let postApi = "http://localhost:8080/book/add";
+    let postApi = "http://localhost:8080/api/v1/books";
     this.http.post(postApi,this.selectedBook).subscribe(data=>{
       console.log("Saved");
       this.LoadBook();
